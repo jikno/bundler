@@ -2,6 +2,22 @@ export interface ExtractStringOptions {
 	bareDelimiters?: string[]
 }
 
+/**
+ * Extracts a string out from the beginning of some text.
+ *
+ * A string is either:
+ * 	- a stretch of text without spaces and a `delimiter`
+ *  - a stretch of text surrounded by single quotes
+ *  - a stretch of text surrounded by double quotes
+ *
+ * ```ts
+ * extractString('foo bar') // { content: 'foo', consumed: 3 }
+ * extractString('foo=bar', { bareDelimiters: ['='] }) // { content: 'foo', consumed: 3 }
+ * extractString('"foo" bar') // { content: 'foo', consumed: 5 }
+ * extractString("'foo 'bar") // { content: 'foo ', consumed: 6 }
+ * extractString('"foo\" bar\\"') // { content: 'foo" bar\', consumed: 13 }
+ * ```
+ */
 export function extractString(content: string, options: ExtractStringOptions = {}) {
 	const bareDelimiters = options.bareDelimiters || []
 

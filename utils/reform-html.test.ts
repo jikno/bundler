@@ -76,9 +76,6 @@ ho
 
 		const result = await reformHtml({ html, htmlLocalPath: '/templates/index.html', rootPath: '/www', header: 'ho' })
 
-		console.log('actual', result.transformedHtml)
-		console.log('expected', expectedHtml)
-
 		assertEquals(result, {
 			scripts: { '/www/main.ts': '/main.js' },
 			assets: {

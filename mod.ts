@@ -34,7 +34,7 @@ export interface BuildParams {
 }
 
 export async function bundle(params: BuildParams) {
-	const outFile = params.outFile || 'bundle.ts'
+	const outFile = params.outFile || 'bundle.generated.ts'
 
 	const header = generateHeader({
 		args: !params.disableArgs,

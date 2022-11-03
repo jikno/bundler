@@ -6,7 +6,7 @@ Bundle/compile a static website into a typescript function with a tidy spice of 
 ${projectBase}/docs/readme.md
 
 Usage:
-	bundle <entryFile> [outFile] [...options]
+	rumble <entryFile> [outFile] [...options]
 
 Arguments:
 	entryFile           The html file to use as a bundler entry point. See ${projectBase}/docs/entry-html.md

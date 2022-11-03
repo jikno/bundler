@@ -1,5 +1,12 @@
 import { extractString } from './extract-string.ts'
 
+/**
+ * Parses a string of comma-separated env vars
+ *
+ * ```ts
+ * parseEnv('KEY_1=value,KEY_2 = "with spaces ") // { KEY_1: 'value', KEY_2: 'with spaces' }
+ * ```
+ */
 export function parseEnv(content: string): Record<string, string> {
 	const env: Record<string, string> = {}
 
