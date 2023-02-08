@@ -3,6 +3,8 @@ export function generateEnvSnippet(env: Record<string, string>) {
 		;(function() {
 			const env = ${JSON.stringify(env)}
 
+			if (!window.Deno) window.Deno = {}
+			
 			window.Deno.env = {
 				toObject() {
 					return {...env}
@@ -17,6 +19,6 @@ export function generateEnvSnippet(env: Record<string, string>) {
 					delete env[key]
 				}
 			}
-		})()
+		})();
 	`
 }
